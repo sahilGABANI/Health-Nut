@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_10sdp"
+    tools:context=".ui.userstore.guest.TakeNBackDialogFragment">
+
+    <LinearLayout
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_rounded_white"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_6sdp">
+
+        <RelativeLayout
+            android:id="@+id/dialogLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/orderItemDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:minHeight="@dimen/_25sdp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/productImageCardView"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    app:cardCornerRadius="@dimen/_2sdp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/color_DFE7EB"
+                    app:strokeWidth="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/productImageView"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_logo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/productDetailsLinearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/closeButtonMaterialCardView"
+                    app:layout_constraintStart_toEndOf="@id/productImageCardView"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_6ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productCalTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_book"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_5ssp"
+                        tools:text="@string/_0_cal" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productDescriptionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_book"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_5ssp"
+                        tools:text="@string/_text" />
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/closeButtonMaterialCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    app:cardCornerRadius="@dimen/_2sdp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/grey_DFE7EB"
+                    app:strokeWidth="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_6sdp"
+                        android:layout_height="@dimen/_6sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_3sdp"
+                        android:src="@drawable/ic_close_icon"
+                        android:tint="@color/orange" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCookies"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_above="@id/rlSpecial"
+                android:layout_below="@id/orderItemDetails"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@id/rvCookies"
+                android:background="@color/color_DFE7EB"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rlSpecial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/clAddToCart"
+                android:paddingTop="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:id="@+id/selectedOptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/optionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/selectedOptionTextView"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_medium"
+                    android:text="@string/label_special_instructions"
+                    android:textColor="@color/darkGrey"
+                    android:textSize="@dimen/_5ssp" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/specialInstructionsAppCompatCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/optionTextView"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-5dp"
+                    android:text="@string/label_special_instructions"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_6ssp"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/specialInstructionsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/specialInstructionsAppCompatCheckBox"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/label_special_instructions"
+                    android:textSize="@dimen/_5ssp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/specialInstructionsTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/specialInstructionsTextView"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:hint="@string/password"
+                    android:minHeight="@dimen/_20sdp"
+                    android:visibility="visible"
+                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/specialInstructionsEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/place_notes_here"
+                        android:imeOptions="actionDone"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:textColor="@color/darkGrey"
+                        android:textColorHint="@color/grey"
+                        android:textCursorDrawable="@color/hintColor"
+                        android:textSize="@dimen/_7ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/orderPrizeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_medium"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="@color/green_light"
+                    android:textSize="@dimen/_5ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/additionLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/addToCartMaterialButton"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/downArrowBackgroundMaterialCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/_2sdp"
+                        app:cardUseCompatPadding="true"
+                        app:strokeColor="@color/grey_DFE7EB"
+                        app:strokeWidth="1dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/downArrowImageView"
+                            android:layout_width="@dimen/_5sdp"
+                            android:layout_height="@dimen/_5sdp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:src="@drawable/drop_down_icon"
+                            android:tint="@color/orange" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/subtractionMaterialCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/downArrowBackgroundMaterialCardView"
+                        android:layout_alignParentStart="true"
+                        app:cardCornerRadius="@dimen/_2sdp"
+                        app:cardUseCompatPadding="true"
+                        app:strokeColor="@color/color_DFE7EB"
+                        app:strokeWidth="1dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_5sdp"
+                            android:layout_height="@dimen/_5sdp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:src="@drawable/ic_subtraction_icon" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productQuantityAppCompatTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/subtractionMaterialCardView"
+                        android:layout_alignBottom="@id/subtractionMaterialCardView"
+                        android:layout_gravity="center"
+                        android:layout_toEndOf="@id/subtractionMaterialCardView"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_8sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp"
+                        app:fontFamily="@font/gotham_medium" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/additionMaterialCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/subtractionMaterialCardView"
+                        android:layout_alignBottom="@id/subtractionMaterialCardView"
+                        android:layout_toEndOf="@id/productQuantityAppCompatTextView"
+                        app:cardCornerRadius="@dimen/_2sdp"
+                        app:cardUseCompatPadding="true"
+                        app:strokeColor="@color/color_DFE7EB"
+                        app:strokeWidth="1dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_5sdp"
+                            android:layout_height="@dimen/_5sdp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:src="@drawable/ic_addition_icon" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addToCartMaterialButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/button_color"
+                    android:fontFamily="@font/gotham_book"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.01"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:text="@string/add_to_cart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_7ssp"
+                    app:cornerRadius="@dimen/_4sdp"
+                    app:icon="@drawable/ic_shopping_cart"
+                    app:iconGravity="start"
+                    app:iconTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

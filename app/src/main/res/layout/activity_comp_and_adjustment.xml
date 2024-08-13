@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.userstore.CompAndAdjustmentActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_8sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoAppCompatImageView"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_launcher_logo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/storeAppCompatImageView"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/logoAppCompatImageView"
+            android:src="@drawable/ic_store_selected" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/locationAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_toEndOf="@+id/storeAppCompatImageView"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp"
+            tools:text="@string/store_name" />
+
+        <LinearLayout
+            android:id="@+id/openStoreTimeLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/locationAppCompatTextView"
+            android:background="@drawable/store_open_close_box_border"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOpenAndClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/store_open_close_bg"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="@string/title_open"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7sdp" />
+
+            <TextClock
+                android:id="@+id/liveTimeTextClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7sdp"
+                tools:text="@string/title_open_time" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/newOrderMaterialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/buttonColor"
+                android:fontFamily="@font/gotham_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                android:paddingHorizontal="@dimen/_7sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="@string/new_order"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_7ssp"
+                android:visibility="gone"
+                app:cornerRadius="@dimen/_4sdp"
+                app:icon="@drawable/ic_shopping_cart"
+                app:iconGravity="start" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/toolbarDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/toolbarRelativeLayout"
+        android:background="@color/color_E4E4E3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarDivider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:fontFamily="@font/gotham_book"
+        android:text="@string/comps_adjustments"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/iAmFinishMaterialButton"
+        android:layout_below="@id/tvHeading"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_5sdp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/cartRecycleView">
+
+                <RelativeLayout
+                    android:id="@+id/rlOrderPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOrderPrizeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/gotham_medium"
+                        android:text="@string/label_sub_total"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tvOrderPrizeText"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_toStartOf="@+id/tvOrderPrizeNumber"
+                        android:layout_toEndOf="@+id/tvOrderPrizeText"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOrderPrizeNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlGiftCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCardAndBow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/card_amp_bow"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_toStartOf="@+id/tvCardAndBowCharge"
+                        android:layout_toEndOf="@+id/tvCardAndBow"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCardAndBowCharge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEmployeeDiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEmployeeDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/employee_discount"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_toStartOf="@+id/tvEmployeeDiscountPrize"
+                        android:layout_toEndOf="@+id/tvEmployeeDiscount"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEmployeeDiscountPrize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlAdjustment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAdjustment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/adjustment"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_toStartOf="@+id/tvAdjustmentDiscountPrize"
+                        android:layout_toEndOf="@+id/tvAdjustment"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAdjustmentDiscountPrize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPromocode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPromoCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/inter_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/promocode"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_toStartOf="@+id/tvPromoCodeDiscount"
+                        android:layout_toEndOf="@+id/tvPromoCode"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPromoCodeDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlCredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCredit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/inter_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/credits"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_toStartOf="@+id/tvCreditDiscount"
+                        android:layout_toEndOf="@+id/tvCredit"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCreditDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlTax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/tax"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_toStartOf="@+id/tvTaxNumber"
+                        android:layout_toEndOf="@+id/tvTax"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTaxNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPrize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/total_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_toStartOf="@+id/tvTotalPrizeNumber"
+                        android:layout_toEndOf="@+id/tvTotalPrize"
+                        android:background="@drawable/dash_line_background" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPrizeNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/century_schoolbook_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_prize"
+                        android:textAllCaps="true"
+                        android:textColor="@color/green_light" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@color/color_E4E4E3" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/employeeDiscountMaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/button_color"
+                android:enabled="true"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.02"
+                android:minHeight="@dimen/_23sdp"
+                android:text="@string/employee_discount"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_6ssp"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/_4sdp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adjustmentsMaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/button_color"
+                android:enabled="true"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.02"
+                android:minHeight="@dimen/_23sdp"
+                android:text="@string/adjustment"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_6ssp"
+                android:visibility="gone"
+                app:cornerRadius="@dimen/_4sdp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rlAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/rlAmountEditPart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_2sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/amountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/_amount"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_7ssp"
+                        android:visibility="visible" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/statusSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_3sdp"
+                        app:strokeColor="@color/color_DFE7EB"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingBottom="@dimen/_2sdp">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autoCompleteStatus"
+                                android:layout_width="@dimen/_105sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@android:color/transparent"
+                                android:drawableEnd="@drawable/drop_down_icon"
+                                android:drawablePadding="@dimen/_3sdp"
+                                android:dropDownWidth="@dimen/_105sdp"
+                                android:dropDownVerticalOffset="6dp"
+                                android:fontFamily="@font/gotham_book"
+                                android:inputType="none"
+                                android:minWidth="@dimen/_105sdp"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:popupBackground="@drawable/order_list_background"
+                                android:text="@string/adjustment_type"
+                                android:textColor="@color/grey"
+                                app:endIconTint="@color/color_ADC2CC"
+                                tools:ignore="LabelFor,TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/amountTextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_21sdp"
+                        android:layout_below="@id/amountTextView"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:hint="@string/password"
+                        android:minHeight="@dimen/_21sdp"
+                        android:visibility="visible"
+                        app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/amountEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham_book"
+                            android:hint="@string/enter_amount"
+                            android:imeOptions="actionDone"
+                            android:includeFontPadding="false"
+                            android:inputType="numberDecimal"
+                            android:text="$"
+                            android:textColor="@color/darkGrey"
+                            android:textColorHint="@color/grey"
+                            android:textCursorDrawable="@color/hintColor"
+                            android:textSize="@dimen/_6ssp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlAmountEditPart"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/clearMaterialButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/rlAmountEditPart"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/minus_five_dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/button_color"
+                        android:enabled="true"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.02"
+                        android:minHeight="@dimen/_23sdp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="@string/label_clear"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_6ssp"
+                        android:visibility="gone"
+                        app:cornerRadius="@dimen/_4sdp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/confirmMaterialButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/rlAmountEditPart"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="@dimen/minus_five_dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/button_color"
+                        android:enabled="true"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.02"
+                        android:minHeight="@dimen/_23sdp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="Confirm Adjustment"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_6ssp"
+                        android:visibility="visible"
+                        app:cornerRadius="@dimen/_4sdp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/iAmFinishMaterialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:backgroundTint="@color/button_color"
+        android:enabled="true"
+        android:fontFamily="@font/gotham_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.02"
+        android:minHeight="@dimen/_23sdp"
+        android:text="@string/i_am_finish"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_6ssp"
+        app:cornerRadius="@dimen/_4sdp" />
+
+
+</RelativeLayout>

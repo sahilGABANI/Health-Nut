@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/_3sdp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/color_E4E4E3"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/customer"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/grey_DFE7EB" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerNameAppCompatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_user_small_icon"
+            android:drawableTint="@color/green_light"
+            android:drawablePadding="@dimen/_4sdp"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerPhoneNumberAppCompatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_phone_icon"
+            android:drawableTint="@color/green_light"
+            android:drawablePadding="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:text="@string/_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerEmailAppCompatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_mail_icon"
+            android:drawableTint="@color/green_light"
+            android:drawablePadding="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:text="@string/_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerLocationAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_location_small_icon"
+            android:drawableTint="@color/green_light"
+            android:drawablePadding="@dimen/_3ssp"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            tools:text="@string/_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPrintReceipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:minHeight="@dimen/_20sdp"
+                android:backgroundTint="@color/buttonColor"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.02"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:text="@string/print_the_label"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_5ssp"
+                app:cornerRadius="@dimen/_3sdp"
+                app:iconSize="@dimen/_6sdp"
+                app:icon="@drawable/ic_printer_icon"
+                app:iconPadding="@dimen/_3sdp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSendReceipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:minHeight="@dimen/_20sdp"
+                android:backgroundTint="@color/buttonColor"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.02"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:text="@string/send_receipt"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_5ssp"
+                app:cornerRadius="@dimen/_3sdp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

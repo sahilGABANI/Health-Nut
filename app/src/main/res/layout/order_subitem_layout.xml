@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/color_DFE7EB" />
+
+        <com.hotbox.terminal.utils.Expandable
+            android:id="@+id/expandable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/subProductNumberAppCompatTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/_2sdp"
+                    android:text="@string/_1"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_6ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/productImageView"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    android:layout_toEndOf="@id/subProductNumberAppCompatTextView"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_logo"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/subProductNameAppCompatTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toEndOf="@id/productImageView"
+                    android:layout_toStartOf="@id/dropDownMaterialCardView"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/cookies"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_6ssp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/dropDownMaterialCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:cardCornerRadius="@dimen/_2sdp"
+                    app:cardUseCompatPadding="true"
+                    app:strokeColor="@color/color_DFE7EB"
+                    app:strokeWidth="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/downArrowImageView"
+                        android:layout_width="@dimen/_5sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_3sdp"
+                        android:src="@drawable/drop_down_icon" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/contain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSubItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </com.hotbox.terminal.utils.Expandable>
+
+        <View
+            android:id="@+id/lastView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:visibility="gone"
+            android:background="@color/color_DFE7EB" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

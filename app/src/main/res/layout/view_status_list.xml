@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:text="@string/_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_6ssp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/statusCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="visible"
+            app:cardBackgroundColor="@color/light_green"
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="@string/_text"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_4ssp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateAndTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customerTextView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:textColor="@color/grey_999999"
+            android:textSize="@dimen/_5ssp"
+            tools:text="@string/_text" />
+
+    </RelativeLayout>
+</merge>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_3sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:includeFontPadding="false"
+            android:text="@string/_card_amp_bow_"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:fontFamily="@font/inter_regular"
+            android:includeFontPadding="false"
+            android:text="@string/best_regards"
+            android:textAlignment="textEnd"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_5ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>

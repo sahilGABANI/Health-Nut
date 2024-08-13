@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_9sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardUseCompatPadding="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlGiftCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <RadioGroup
+                        android:id="@+id/cardTypeRadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/physicalRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/custom_radio_button"
+                            android:checked="true"
+                            android:fontFamily="@font/gotham_book"
+                            android:paddingStart="@dimen/_4sdp"
+                            android:text="@string/physical_card"
+                            android:textColor="@color/radio_button_text_color"
+                            android:textSize="@dimen/_6ssp" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/virtualRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:button="@drawable/custom_radio_button"
+                            android:fontFamily="@font/gotham_book"
+                            android:paddingStart="@dimen/_4sdp"
+                            android:text="@string/virtual_card"
+                            android:textColor="@color/radio_button_text_color"
+                            android:textSize="@dimen/_6ssp" />
+
+                    </RadioGroup>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cardTypeRadioGroup">
+
+                        <LinearLayout
+                            android:id="@+id/llCardDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:visibility="visible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/llCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/discountPrizeTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gotham_book"
+                                    android:gravity="center"
+                                    android:text="@string/card_id"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/darkGrey"
+                                    android:textSize="@dimen/_5ssp" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/giftPackagingInputLayout"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:minWidth="@dimen/_120sdp"
+                                    android:minHeight="@dimen/_18sdp"
+                                    android:visibility="visible"
+                                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                    app:hintEnabled="false">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/giftPackagingEditText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gotham_book"
+                                        android:hint="@string/enter_gift_card_id"
+                                        android:imeOptions="actionNext"
+                                        android:includeFontPadding="false"
+                                        android:inputType="text"
+                                        android:textColor="@color/grey"
+                                        android:textColorHint="@color/grey"
+                                        android:textCursorDrawable="@color/hintColor"
+                                        android:textSize="@dimen/_5ssp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/emailTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gotham_book"
+                                    android:gravity="center"
+                                    android:text="@string/email_purchaser"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/darkGrey"
+                                    android:textSize="@dimen/_5ssp" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/emailInputLayout"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:minWidth="@dimen/_120sdp"
+                                    android:minHeight="@dimen/_18sdp"
+                                    android:visibility="visible"
+                                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                    app:hintEnabled="false">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/emailEditText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gotham_book"
+                                        android:hint="@string/enter_email"
+                                        android:imeOptions="actionNext"
+                                        android:includeFontPadding="false"
+                                        android:inputType="text"
+                                        android:textColor="@color/grey"
+                                        android:textColorHint="@color/darkGrey"
+                                        android:textCursorDrawable="@color/hintColor"
+                                        android:textSize="@dimen/_5ssp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/AmountTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:fontFamily="@font/gotham_book"
+                                    android:gravity="center"
+                                    android:text="@string/amount"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/darkGrey"
+                                    android:textSize="@dimen/_5ssp" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:minWidth="@dimen/_50sdp"
+                                    android:minHeight="@dimen/_18sdp"
+                                    android:visibility="visible"
+                                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                    app:hintEnabled="false">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/amountEditText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gotham_book"
+                                        android:hint="@string/enter_amount"
+                                        android:imeOptions="actionNext"
+                                        android:includeFontPadding="false"
+                                        android:inputType="numberDecimal"
+                                        android:textColor="@color/grey"
+                                        android:textColorHint="@color/grey"
+                                        android:textCursorDrawable="@color/hintColor"
+                                        android:textSize="@dimen/_5ssp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llAmount"
+                            android:layout_width="@dimen/_195sdp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gotham_medium"
+                                android:gravity="center"
+                                android:text="@string/amount"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_5ssp" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:minHeight="@dimen/_18sdp"
+                                android:visibility="visible"
+                                app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                app:hintEnabled="false">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gotham_book"
+                                    android:hint="@string/enter_amount"
+                                    android:imeOptions="actionNext"
+                                    android:includeFontPadding="false"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="@color/grey"
+                                    android:textColorHint="@color/grey"
+                                    android:textCursorDrawable="@color/hintColor"
+                                    android:textSize="@dimen/_5ssp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/userDetailsLayout"
+                            android:layout_width="@dimen/_195sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/llAmount"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/llAmount">
+
+                            <LinearLayout
+                                android:id="@+id/llEmailRecipient"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gotham_medium"
+                                    android:gravity="center"
+                                    android:text="@string/select_from_list"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_5ssp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginTop="@dimen/_3sdp"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:minHeight="@dimen/_18sdp"
+                                        app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                        app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                        app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                        app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                        app:hintEnabled="false">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edtPurchaserNameEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/gotham_book"
+                                            android:hint="@string/name"
+                                            android:imeOptions="actionNext"
+                                            android:includeFontPadding="false"
+                                            android:inputType="text"
+                                            android:textColor="@color/black"
+                                            android:textColorHint="@color/grey"
+                                            android:textCursorDrawable="@color/hintColor"
+                                            android:textSize="@dimen/_5ssp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginTop="@dimen/_3sdp"
+                                        android:layout_marginStart="@dimen/_2sdp"
+                                        android:minHeight="@dimen/_18sdp"
+                                        app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                        app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                        app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                        app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                        app:hintEnabled="false">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edtPurchaserSurNameEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/gotham_book"
+                                            android:hint="@string/lastName"
+                                            android:imeOptions="actionNext"
+                                            android:includeFontPadding="false"
+                                            android:inputType="text"
+                                            android:textColor="@color/black"
+                                            android:textColorHint="@color/grey"
+                                            android:textCursorDrawable="@color/hintColor"
+                                            android:textSize="@dimen/_5ssp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:minHeight="@dimen/_18sdp"
+                                    android:visibility="visible"
+                                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                    app:hintEnabled="false">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edtPurchaserEmailEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gotham_book"
+                                        android:hint="@string/email_address"
+                                        android:imeOptions="actionNext"
+                                        android:includeFontPadding="false"
+                                        android:inputType="text"
+                                        android:textColor="@color/grey"
+                                        android:textColorHint="@color/darkGrey"
+                                        android:textCursorDrawable="@color/hintColor"
+                                        android:textSize="@dimen/_5ssp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/userDetailsHeaderLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="start"
+                                        android:layout_marginTop="@dimen/_3sdp"
+                                        android:fontFamily="@font/gotham_medium"
+                                        android:text="@string/to"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_5ssp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:layout_marginTop="@dimen/_3sdp"
+                                            android:layout_marginEnd="@dimen/_2sdp"
+                                            android:minHeight="@dimen/_18sdp"
+                                            app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                            app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                            app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                            app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                            app:hintEnabled="false">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/edtRecipientNameEditText"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/gotham_book"
+                                                android:hint="@string/recipient_name"
+                                                android:imeOptions="actionNext"
+                                                android:includeFontPadding="false"
+                                                android:inputType="text"
+                                                android:textColor="@color/black"
+                                                android:textColorHint="@color/grey"
+                                                android:textCursorDrawable="@color/hintColor"
+                                                android:textSize="@dimen/_5ssp" />
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:layout_marginTop="@dimen/_3sdp"
+                                            android:layout_marginStart="@dimen/_2sdp"
+                                            android:minHeight="@dimen/_18sdp"
+                                            app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                            app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                            app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                            app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                            app:hintEnabled="false">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/edtRecipientSurNameEditText"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/gotham_book"
+                                                android:hint="@string/recipient_lastname"
+                                                android:imeOptions="actionNext"
+                                                android:includeFontPadding="false"
+                                                android:inputType="text"
+                                                android:textColor="@color/black"
+                                                android:textColorHint="@color/grey"
+                                                android:textCursorDrawable="@color/hintColor"
+                                                android:textSize="@dimen/_5ssp" />
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_3sdp"
+                                        android:hint="@string/surname"
+                                        android:minHeight="@dimen/_18sdp"
+                                        app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                        app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                        app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                        app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                        app:hintEnabled="false">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edtRecipientEmailEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/gotham_book"
+                                            android:hint="@string/email_address"
+                                            android:imeOptions="actionNext"
+                                            android:includeFontPadding="false"
+                                            android:inputType="text"
+                                            android:textColor="@color/black"
+                                            android:textColorHint="@color/grey"
+                                            android:textCursorDrawable="@color/hintColor"
+                                            android:textSize="@dimen/_5ssp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gotham_medium"
+                                    android:gravity="center"
+                                    android:text="@string/personal_message"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_5ssp" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:visibility="visible"
+                                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                                    app:hintEnabled="false">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edtPersonalMessage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gotham_book"
+                                        android:gravity="top"
+                                        android:hint="@string/message"
+                                        android:imeOptions="actionDone"
+                                        android:includeFontPadding="false"
+                                        android:inputType="text"
+                                        android:minHeight="@dimen/_50sdp"
+                                        android:textAlignment="gravity"
+                                        android:textColor="@color/grey"
+                                        android:textColorHint="@color/darkGrey"
+                                        android:textCursorDrawable="@color/hintColor"
+                                        android:textSize="@dimen/_5ssp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/createAsGiftCheckBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/gotham_book"
+                            android:includeFontPadding="false"
+                            android:text="@string/create_as_gift"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6ssp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/userDetailsLayout" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/registerCardButton"
+                            android:layout_width="@dimen/_175sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:backgroundTint="@color/button_color"
+                            android:fontFamily="@font/gotham_medium"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:letterSpacing="0.02"
+                            android:minHeight="@dimen/_25sdp"
+                            android:text="@string/register_card"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_6ssp"
+                            app:cornerRadius="@dimen/_4sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/llCardDetails" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

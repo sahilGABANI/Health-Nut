@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/wifiSelectLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wifi_list_background"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_4sdp"
+        android:padding="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/wifiImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wifi_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/wifiNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_toEndOf="@id/wifiImageView"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/_10ssp"
+            tool:text="Hot Box 2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lockImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_wifi_lock_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/connectionStatusTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wifiNameTextView"
+            android:layout_alignStart="@id/wifiNameTextView"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:text="@string/not_connected"
+            android:textColor="@color/text_color_light"
+            android:textSize="@dimen/_6ssp" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

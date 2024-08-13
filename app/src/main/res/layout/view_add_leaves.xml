@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_9sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtSearch"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/searchButton"
+                    android:layout_alignBottom="@id/searchButton"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_toStartOf="@id/searchButton"
+                    android:gravity="center"
+                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                    app:boxStrokeColor="@color/color_D1D1D0"
+                    app:hintEnabled="false"
+                    app:hintTextColor="@color/color_DFE7EB">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/orderIdEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_book"
+                        android:hint="@string/label_order_number"
+                        android:imeOptions="actionDone"
+                        android:includeFontPadding="false"
+                        android:inputType="number"
+                        android:textColor="@color/color_666666"
+                        android:textColorHint="@color/md_grey"
+                        android:textCursorDrawable="@color/hintColor"
+                        android:textSize="@dimen/_6ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/buttonColor"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.01"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:text="@string/search"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_7ssp"
+                    app:cornerRadius="@dimen/_4sdp"
+                    app:iconGravity="start" />
+
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_3sdp"
+                    android:layout_alignStart="@id/searchButton"
+                    android:layout_alignTop="@id/searchButton"
+                    android:layout_alignEnd="@id/searchButton"
+                    android:layout_alignBottom="@id/searchButton"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:visibility="invisible" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:id="@+id/orderDetailsPart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="@dimen/_3sdp"
+                        app:cardUseCompatPadding="true"
+                        app:strokeColor="@color/color_E4E4E3"
+                        app:strokeWidth="@dimen/_1sdp">
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_5sdp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/orderId"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_1sdp"
+                                    android:fontFamily="@font/gotham_medium"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_5ssp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="@string/label_order_id" />
+
+
+                                <View
+                                    android:id="@+id/view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/one_dp"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@color/color_E4E4E3"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/orderId" />
+
+                                <androidx.core.widget.NestedScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:scrollbars="none"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/view">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rvOrderDetailsView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:nestedScrollingEnabled="false"
+                                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                                        <LinearLayout
+                                            android:id="@+id/specialTextLinear"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal"
+                                            android:visibility="gone"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/rvOrderDetailsView">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_5sdp"
+                                                android:drawableStart="@drawable/ic_warning_icon"
+                                                android:drawablePadding="@dimen/_2sdp"
+                                                android:fontFamily="@font/gotham_medium"
+                                                android:text="@string/special_instructions"
+                                                android:textAllCaps="true"
+                                                android:textColor="@color/black"
+                                                android:textSize="@dimen/_5sdp" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/specialInstructionsTextView"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/_2sdp"
+                                                android:layout_marginTop="@dimen/_5sdp"
+                                                android:fontFamily="@font/gotham_book"
+                                                android:text="@string/_text"
+                                                android:textColor="@color/grey"
+                                                android:textSize="@dimen/_5sdp"
+                                                app:layout_constraintStart_toEndOf="@id/specialInstructionsTextView"
+                                                app:layout_constraintTop_toBottomOf="@id/rvOrderDetailsView" />
+
+                                        </LinearLayout>
+
+                                        <include
+                                            android:id="@+id/orderPrizePart"
+                                            layout="@layout/view_order_prize_count_detail" />
+
+                                    </LinearLayout>
+
+                                </androidx.core.widget.NestedScrollView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.core.widget.NestedScrollView>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/llUserDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rlPhoneSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="@dimen/_130sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/searchPhoneButton"
+                            android:layout_alignBottom="@id/searchPhoneButton"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:layout_toStartOf="@id/searchPhoneButton"
+                            android:gravity="center"
+                            app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                            app:boxStrokeColor="@color/color_D1D1D0"
+                            app:endIconMode="custom"
+                            app:endIconTint="@color/color_ADC2CC"
+                            app:hintEnabled="false"
+                            app:hintTextColor="@color/color_DFE7EB"
+                            app:startIconDrawable="@drawable/ic_phone_icon">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/phoneSearchEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gotham_book"
+                                android:hint="@string/phone_hint"
+                                android:imeOptions="actionDone"
+                                android:includeFontPadding="false"
+                                android:inputType="phone"
+                                android:textColor="@color/color_666666"
+                                android:textColorHint="@color/md_grey"
+                                android:textCursorDrawable="@color/hintColor"
+                                android:textSize="@dimen/_6ssp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/searchPhoneButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/buttonColor"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:letterSpacing="0.01"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="@string/search"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/_7ssp"
+                            app:cornerRadius="@dimen/_4sdp"
+                            app:iconGravity="start" />
+
+                        <ProgressBar
+                            android:id="@+id/phoneSearchProgressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/_4sdp"
+                            android:layout_alignStart="@id/searchPhoneButton"
+                            android:layout_alignTop="@id/searchPhoneButton"
+                            android:layout_alignEnd="@id/searchPhoneButton"
+                            android:layout_alignBottom="@id/searchPhoneButton"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:visibility="invisible" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerNameAppCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rlPhoneSearch"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableStart="@drawable/ic_user_small_icon"
+                        android:drawablePadding="@dimen/_4sdp"
+                        android:drawableTint="@color/green_light"
+                        android:fontFamily="@font/gotham_book"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerPhoneNumberAppCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_below="@id/customerNameAppCompatTextView"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableStart="@drawable/ic_phone_icon"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:drawableTint="@color/green_light"
+                        android:fontFamily="@font/gotham_book"
+                        android:includeFontPadding="false"
+                        android:text="@string/_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerEmailAppCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_below="@id/customerPhoneNumberAppCompatTextView"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:drawableStart="@drawable/ic_mail_icon"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:drawableTint="@color/green_light"
+                        android:fontFamily="@font/gotham_book"
+                        android:includeFontPadding="false"
+                        android:text="@string/_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/leavesTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/customerEmailAppCompatTextView"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:fontFamily="@font/inter_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_7ssp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/addLeavesButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_below="@id/leavesTextview"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:backgroundTint="@color/buttonColor"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.01"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:text="@string/add_leaves"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_7ssp"
+                        app:cornerRadius="@dimen/_4sdp"
+                        app:iconGravity="start" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLeavesApplied"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/gotham_book"
+                        android:text="@string/leaves_already_applied"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_7ssp" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

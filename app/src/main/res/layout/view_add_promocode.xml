@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.hotbox.terminal.utils.Expandable
+        android:id="@+id/expandable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:drawableStart="@drawable/ic_promocode_card"
+                android:drawableTint="@color/green_light"
+                android:drawablePadding="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:text="@string/add_promocode"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/giftCardDiscountPrizeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/ivClose"
+                android:fontFamily="@font/century_schoolbook_bold"
+                android:text="@string/_5"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_6ssp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_6sdp"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/ic_close_icon"
+                android:tint="@color/color_ADC2CC"
+                android:visibility="gone" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/downArrowMaterialCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
+                app:strokeColor="@color/color_E4E4E3"
+                app:strokeWidth="1dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/downArrowImageView"
+                    android:layout_width="@dimen/_5sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:src="@drawable/drop_down_icon" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:background="@color/color_E4E4E3" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/discountPrizeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:gravity="center"
+                    android:text="@string/promocode"
+                    android:textAllCaps="true"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_5ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/giftPackagingInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/discountPrizeTextView"
+                    android:layout_alignStart="@id/discountPrizeTextView"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:minWidth="@dimen/_100sdp"
+                    android:minHeight="@dimen/_18sdp"
+                    android:visibility="visible"
+                    app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/promoCodeEditText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/xxxx_xxxx"
+                        android:imeOptions="actionDone"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/color_ADC2CC"
+                        android:textCursorDrawable="@color/hintColor"
+                        android:textSize="@dimen/_5ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/applyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/discountPrizeTextView"
+                    android:layout_alignTop="@id/giftPackagingInputLayout"
+                    android:layout_alignBottom="@id/giftPackagingInputLayout"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/giftPackagingInputLayout"
+                    android:backgroundTint="@color/buttonColor"
+                    android:fontFamily="@font/gotham_book"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.02"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="@string/apply"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_6ssp"
+                    app:cornerRadius="@dimen/_3sdp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.hotbox.terminal.utils.Expandable>
+
+</LinearLayout>

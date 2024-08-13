@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/color_F0F4F6"
+    tools:context=".ui.userstore.loyaltycard.LoyaltyCardFragment">
+
+    <LinearLayout
+        android:id="@+id/loyaltyCardDialogLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_rounded_white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_scan_loyalty_card" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/century_schoolbook_bold"
+                android:includeFontPadding="false"
+                android:text="@string/loyalty_card"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/would_you_like_to_scan_your_loyalty_card"
+                android:textAlignment="center"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_6ssp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scanCardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                android:minWidth="@dimen/_50sdp"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/scan_card"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_7ssp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:icon="@drawable/scan_card_button_icon"
+                app:iconGravity="start"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWithPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                android:minWidth="@dimen/_50sdp"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/with_phone"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_7ssp"
+                app:cornerRadius="@dimen/_4sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_store_shape"
+                android:fontFamily="@font/gotham_medium"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@string/skip"
+                android:textAllCaps="true"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_6ssp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/joinLoyaltyProgramLinearLayout"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:background="@drawable/bg_rounded_small_corner_radius_white"
+            android:minHeight="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_6sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_trophy_icon"
+                android:drawablePadding="@dimen/_2sdp"
+                android:fontFamily="@font/gotham_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/join_loyalty_program"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_7ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/closeButtonMaterialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        app:cardCornerRadius="@dimen/_2sdp"
+        android:layout_margin="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/color_ADC2CC"
+        app:strokeWidth="1dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_6sdp"
+            android:layout_height="@dimen/_6sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_3sdp"
+            android:src="@drawable/ic_close_icon" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

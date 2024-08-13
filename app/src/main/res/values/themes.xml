@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HotBoxCookies" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/theme_primary_red</item>
+        <item name="colorPrimaryVariant">@color/theme_primary_red_dark_1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/theme_primary_red_dark_1</item>
+        <item name="colorSecondaryVariant">@color/theme_primary_red_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/color_F2F0F4F6</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="colorAccent">@color/theme_primary_red_dark_1</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="MyGreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/green_light_50</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="colorAccent">@color/theme_primary_red_dark_1</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.MaterialComponents.DayNight.DarkActionBar" parent="Theme.MaterialComponents.Light.DarkActionBar"/>
+    <style name="Style_MonthYearPickerDialog" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="headerBackgroundColor">@color/theme_primary_red_dark_1</item>
+        <item name="headerTextColor">@color/black</item>
+        <item name="headerTextColorSelected">@color/white</item>
+        <item name="monthBackgroundColorSelected">@color/white</item>
+        <item name="monthTextColor">@color/black</item>
+        <item name="monthTextColorDisabled">@color/grey</item>
+        <item name="monthTextColorSelected">@color/black</item>
+        <item name="yearTextColor">@color/black</item>
+        <item name="yearTextColorSelected">@color/black</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Style.DialogButton.Black</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Style.DialogButton.Black</item>
+    </style>
+
+    <style name="Style.DialogButton.Black" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DialogRed" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">#C4EDC6</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:colorControlNormal">@color/color_ADC2CC</item>
+        <item name="android:colorControlActivated">@color/buttonColor</item>
+    </style>
+
+    <style name="BSDialogThemeRegular" parent="@style/Theme.Design.BottomSheetDialog">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="behavior_draggable">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="colorAccent">@color/buttonColor</item>
+    </style>
+
+</resources>

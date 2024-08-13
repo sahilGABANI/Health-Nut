@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <View
+            android:id="@+id/viewUpper"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="#CCCCCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLongTicketTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/long_ticket_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWrongToGoFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/wrong_to_go_food"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDidNotLike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/did_not_like"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvForeignObject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/foreign_object"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSpill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/spill"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvManagement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/management"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMissedItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/missed_item"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTraining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/training"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMarketing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/marketing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEntryError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/entry_error"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEightySix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/eightySix"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGuestChangedMind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/guest_changed_mind"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/test"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E4E4E3" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

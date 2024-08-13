@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F0F4F6">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/orderListTopPart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/color_E4E4E3"
+        app:strokeWidth="@dimen/one_dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderIdTextView"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/order_id"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/customerNameTextView"
+                android:layout_width="@dimen/_47sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/minus_one_dp"
+                android:layout_toEndOf="@id/orderIdTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/guest"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productPrizeTextView"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_toEndOf="@id/customerNameTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/total"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderTypeTextView"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/minus_one_dp"
+                android:layout_toEndOf="@id/productPrizeTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/order_type"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/statusTextView"
+                android:layout_width="@dimen/_39sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@id/orderTypeTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/status"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/promisedTimeAppCompatTextView"
+                android:layout_width="@dimen/_66sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/minus_one_dp"
+                android:layout_toEndOf="@id/statusTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/promised_time_text"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderDateAndTimeTextView"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@id/promisedTimeAppCompatTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/order_placed"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</merge>
