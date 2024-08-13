@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llCookiesFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F0F4F6"
+    tools:context=".ui.userstore.cookies.CookiesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_item_rounded"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_search_icon"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:hint="@string/search"
+                android:padding="@dimen/_5sdp"
+                android:textColorHint="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3">
+
+                <View
+                    android:layout_width="@dimen/two_dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_D1D1D0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:includeFontPadding="false"
+                    android:text="@string/filter_by"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_6ssp" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:background="@android:color/transparent"
+                    android:drawableEnd="@drawable/drop_down_icon"
+                    android:drawablePadding="@dimen/_3sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:includeFontPadding="false"
+                    android:inputType="none"
+                    android:text="@string/popular"
+                    android:textColor="@color/black"
+                    app:endIconTint="@color/color_ADC2CC" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productDetailsRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-6dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            tools:itemCount="5"
+            tools:listitem="@layout/view_user_store_item" />
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

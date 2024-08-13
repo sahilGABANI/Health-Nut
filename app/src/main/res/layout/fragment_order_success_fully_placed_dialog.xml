@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llPaymentSuccessPart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/color_F0F4F6"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_rounded_white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_4sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add_to_cart" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/order_successfully_placed"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_7ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/orderIdTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_7ssp"
+                        tools:text="Order #1001" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_book"
+                        android:text="@string/thank_you_promised_order_time"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_6ssp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/skipMaterialCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:minHeight="@dimen/_21sdp"
+                        app:cardCornerRadius="@dimen/_3sdp"
+                        app:cardUseCompatPadding="true"
+                        app:strokeColor="@color/color_DFE7EB"
+                        app:strokeWidth="@dimen/one_dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvOrderPromisedTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:drawableStart="@drawable/ic_watch_icon"
+                            android:drawablePadding="@dimen/_3sdp"
+                            android:fontFamily="@font/gotham_medium"
+                            android:text="@string/_09_00_am"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6ssp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/goToStartButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:backgroundTint="@color/button_color"
+                        android:fontFamily="@font/gotham_medium"
+                        android:letterSpacing="0.01"
+                        android:minWidth="@dimen/_50sdp"
+                        android:minHeight="@dimen/_22sdp"
+                        android:paddingHorizontal="@dimen/_6sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:text="@string/go_to_start_screen"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_6ssp"
+                        app:cornerRadius="@dimen/_3sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/bg_rounded_small_corner_radius_white"
+                android:gravity="center"
+                android:minHeight="@dimen/_20sdp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableStart="@drawable/ic_receipt"
+                    android:drawablePadding="@dimen/_3sdp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/send_receipt"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@color/color_DFE7EB" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:drawableStart="@drawable/ic_phone_icon"
+                    android:drawablePadding="@dimen/_2sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center_vertical"
+                    android:text="@string/_987_984_3434"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:drawableStart="@drawable/ic_mail_icon"
+                    android:drawablePadding="@dimen/_2sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center_vertical"
+                    android:text="@string/dummy_mail_id"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rlSendReceipt"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/bg_rounded_small_corner_radius_white"
+                android:minHeight="@dimen/_20sdp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:minHeight="@dimen/_20sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPrize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:drawableStart="@drawable/ic_receipt"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/send_receipt"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/downArrowBackgroundMaterialCardView"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/_3sdp"
+                        app:cardUseCompatPadding="true"
+                        app:strokeColor="@color/green_light"
+                        app:strokeWidth="@dimen/two_dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/downArrowImageView"
+                            android:layout_width="@dimen/_7sdp"
+                            android:layout_height="@dimen/_7sdp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:src="@drawable/drop_down_icon" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/horizontalView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/color_DFE7EB"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/userDetailsRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:visibility="visible">
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/phoneCheckBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="-6dp"
+                            android:fontFamily="@font/gotham_book"
+                            android:text="@string/phone"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_5ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/phoneCheckBox"
+                            android:layout_alignBottom="@id/phoneCheckBox"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_toStartOf="@id/editPhone"
+                            android:drawableStart="@drawable/ic_phone_icon"
+                            android:drawablePadding="@dimen/_2sdp"
+                            android:drawableTint="@color/green_light"
+                            android:fontFamily="@font/gotham_book"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_5ssp"
+                            tools:text="@string/_987_984_3434" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/editPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/phoneCheckBox"
+                            android:layout_alignBottom="@id/phoneCheckBox"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/emailCheckBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/phoneCheckBox"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="-6dp"
+                            android:fontFamily="@font/gotham_book"
+                            android:text="@string/_email"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_5ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/emailCheckBox"
+                            android:layout_alignBottom="@id/emailCheckBox"
+                            android:layout_gravity="center"
+                            android:layout_toStartOf="@id/editEmail"
+                            android:drawableStart="@drawable/ic_mail_icon"
+                            android:drawablePadding="@dimen/_2sdp"
+                            android:drawableTint="@color/green_light"
+                            android:fontFamily="@font/gotham_book"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_5ssp"
+                            tools:text="@string/dummy_mail_id" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/editEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/emailCheckBox"
+                            android:layout_alignBottom="@id/emailCheckBox"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSendReceiptPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableStart="@drawable/ic_phone_icon"
+                        android:drawablePadding="@dimen/_2sdp"
+                        android:drawableTint="@color/green_light"
+                        android:fontFamily="@font/gotham_book"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp"
+                        android:visibility="gone"
+                        tools:text="@string/_987_984_3434" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSendReceiptEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:drawableStart="@drawable/ic_mail_icon"
+                        android:drawablePadding="@dimen/_2sdp"
+                        android:drawableTint="@color/green_light"
+                        android:fontFamily="@font/gotham_book"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_5ssp"
+                        android:visibility="gone"
+                        tools:text="@string/dummy_mail_id" />
+
+                    <LinearLayout
+                        android:id="@+id/llButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/sendReceiptButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/button_color"
+                            android:fontFamily="@font/gotham_medium"
+                            android:includeFontPadding="false"
+                            android:letterSpacing="0.01"
+                            android:minHeight="@dimen/_22sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="@string/send_receipt"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_5ssp"
+                            app:cornerRadius="@dimen/_3sdp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/printReceiptButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/button_color"
+                            android:fontFamily="@font/gotham_medium"
+                            android:includeFontPadding="false"
+                            android:letterSpacing="0.01"
+                            android:minHeight="@dimen/_22sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="@string/print_receipt"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_5ssp"
+                            app:cornerRadius="@dimen/_3sdp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/printBOHReceiptButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/button_color"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.01"
+                        android:minHeight="@dimen/_22sdp"
+                        android:paddingHorizontal="@dimen/_6sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:text="@string/boh"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_5ssp"
+                        app:cornerRadius="@dimen/_3sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

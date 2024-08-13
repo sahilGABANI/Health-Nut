@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_30sdp"
+    android:paddingBottom="@dimen/_10sdp"
+    tools:context=".ui.userstore.editcart.EditCartFragment">
+
+    <LinearLayout
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_rounded_white"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_6sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productImageView"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_logo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:background="@drawable/grey_corner_border"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_close_icon"
+                android:tint="@color/orange" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            tools:text="Deluxe" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/popularBackgroundCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/orange"
+                app:cardCornerRadius="@dimen/_2sdp"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/popularTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/popular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_4ssp"
+                    app:textAllCaps="true" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/statusBackgroundCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/theme_primary_red_dark"
+                app:cardCornerRadius="@dimen/_2sdp"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/statusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/vegeterian"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_4ssp"
+                    app:textAllCaps="true" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProductPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productPrize"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_6ssp"
+            tools:text="@string/dummy_prize" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_book"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_5ssp"
+            tools:text="shredded mozzarella, tomatoes, carrots, cucumbers, sunflower seeds served with fresh romaine and iceberg lettuce and original house dressing (380 cal) - don't forget to add tuna!" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productCalTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/gotham_book"
+            android:text="@string/_0_cal"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_5ssp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addToCartMaterialButton"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderPrizeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/century_schoolbook_bold"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_8ssp"
+                tools:text="$11.25" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/leaveTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_toEndOf="@id/orderPrizeTextView"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_6ssp"
+                android:text="@string/leaves" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSubtraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivAddition"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_toStartOf="@id/productQuantityAppCompatTextView"
+                android:background="@drawable/grey_corner_border"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:src="@drawable/ic_subtraction_icon"
+                android:tint="@color/green_light" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productQuantityAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ivSubtraction"
+                android:layout_alignBottom="@id/ivSubtraction"
+                android:layout_gravity="center"
+                android:layout_toStartOf="@id/ivAddition"
+                android:gravity="center"
+                android:minWidth="@dimen/_12sdp"
+                android:text="@string/_1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_6ssp"
+                app:fontFamily="@font/gotham_medium" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAddition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/grey_corner_border"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:src="@drawable/ic_addition_icon"
+                android:tint="@color/green_light" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlSpecial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/specialInstructionsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/label_special_instructions"
+                android:textSize="@dimen/_5ssp"
+                android:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/specialInstructionsTextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/specialInstructionsTextView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:hint="@string/password"
+                android:minHeight="@dimen/_20sdp"
+                android:visibility="visible"
+                app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/specialInstructionsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/place_notes_here"
+                    android:imeOptions="actionDone"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:textColor="@color/darkGrey"
+                    android:textColorHint="@color/grey"
+                    android:textCursorDrawable="@color/hintColor"
+                    android:textSize="@dimen/_7ssp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addToCartMaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/button_color"
+                android:enabled="false"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/add_to_order"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_7ssp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:icon="@drawable/ic_shopping_cart"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
+
+
+
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:clickable="false"
+                android:progressTint="@color/green_light"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/llRedeem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:background="@drawable/user_store_shape"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redeem_products"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/gotham_medium"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_7ssp"
+                android:drawableStart="@drawable/ic_shopping_cart"
+                android:drawableTint="@color/green_light"
+                android:drawablePadding="@dimen/_5sdp"/>
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCustomize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/user_store_shape"
+            android:fontFamily="@font/gotham_medium"
+            android:gravity="center"
+            android:visibility="gone"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.02"
+            android:paddingVertical="@dimen/_7ssp"
+            android:text="@string/customize"
+            android:textAllCaps="true"
+            android:textColor="@color/green_light"
+            android:textSize="@dimen/_7ssp" />
+    </LinearLayout>
+
+</LinearLayout>

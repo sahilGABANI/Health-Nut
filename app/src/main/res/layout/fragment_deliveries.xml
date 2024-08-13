@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/deliveriesFrameLayout"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F0F4F6"
+        tools:context=".ui.main.deliveries.DeliveriesFragment"
+        tools:ignore="UselessParent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:text="@string/deliveries"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/checkLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headingTextView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_3sdp">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/allCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/all"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/newCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/new_text"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/receivedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/received"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/assignedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/assigned"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/dispatchedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/dispatched"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/deliveredCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/delivered"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dateCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headingTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_3sdp"
+            app:strokeColor="@color/color_DFE7EB"
+            app:strokeWidth="1dp">
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/dateTextView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableEnd="@drawable/ic_calender_icon"-->
+<!--                android:drawablePadding="@dimen/_5sdp"-->
+<!--                android:fontFamily="@font/gotham_book"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingStart="@dimen/_5sdp"-->
+<!--                android:paddingTop="@dimen/_2sdp"-->
+<!--                android:paddingEnd="@dimen/_5sdp"-->
+<!--                android:paddingBottom="@dimen/_2sdp"-->
+<!--                android:text="@string/today"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="@dimen/_5ssp" />-->
+
+            <AutoCompleteTextView
+                android:id="@+id/dateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:textSize="@dimen/_6ssp"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/drop_down_icon"
+                android:drawablePadding="@dimen/_5sdp"
+                android:dropDownWidth="@dimen/_45sdp"
+                android:inputType="none"
+                android:dropDownVerticalOffset="6dp"
+                android:text="@string/active"
+                android:fontFamily="@font/gotham_book"
+                android:textColor="@color/md_grey"
+                app:endIconTint="@color/color_ADC2CC" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkLinearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrderView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emptyMessageAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/no_order_for_today"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="gone"
+                app:fontFamily="@font/inter_medium" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

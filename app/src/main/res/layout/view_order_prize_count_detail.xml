@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderPrizeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/label_sub_total"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_toStartOf="@+id/tvOrderPrizeNumber"
+            android:layout_toEndOf="@+id/tvOrderPrizeText"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderPrizeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderDeliveryRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/delivery_fee"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvDeliveryCharge"
+            android:layout_toEndOf="@+id/tvDeliveryText"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/grey" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderTipRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/tips"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvTipsPrize"
+            android:layout_toEndOf="@+id/tvTips"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTipsPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/grey" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderTaxRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/tax"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvTaxPrize"
+            android:layout_toEndOf="@+id/tvTax"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTaxPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/grey" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderPromocodeRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPromocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/promo_code"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvPromocodeDiscountPrize"
+            android:layout_toEndOf="@+id/tvPromocode"
+            android:background="@drawable/dash_line_background"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPromocodeDiscountPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/green_light" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderEmployeeDiscountRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmployeeDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/employee_discount"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvEmployeeDiscountPrize"
+            android:layout_toEndOf="@+id/tvEmployeeDiscount"
+            android:background="@drawable/dash_line_background"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmployeeDiscountPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/green_light" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderCardAndBowRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardAndBow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/card_amp_bow"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvCardAndBowCharge"
+            android:layout_toEndOf="@+id/tvCardAndBow"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardAndBowCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/green_light" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAdjustment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAdjustment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/adjustment"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvAdjustmentCharge"
+            android:layout_toEndOf="@+id/tvAdjustment"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAdjustmentCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/green_light" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlRefund"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRefund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/refund"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvRefundAmount"
+            android:layout_toEndOf="@+id/tvRefund"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRefundAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/green_light" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/credits"
+            android:textColor="@color/black"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvCreditAmount"
+            android:layout_toEndOf="@+id/tvCredit"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreditAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/grey"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/total"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_toStartOf="@+id/tvTotalPrizeNumber"
+            android:layout_toEndOf="@+id/tvTotalPrize"
+            android:background="@drawable/dash_line_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalPrizeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_prize"
+            android:textAllCaps="true"
+            android:textColor="@color/orange" />
+    </RelativeLayout>
+
+</LinearLayout>

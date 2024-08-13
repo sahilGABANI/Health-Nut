@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_3sdp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/grey_DFE7EB"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/tracking"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/zoomMapAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:drawableStart="@drawable/ic_zoom_icon"
+            android:drawablePadding="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_book"
+            android:text="@string/zoom_map"
+            android:visibility="gone"
+            android:textColor="@color/green_light"
+            android:textSize="@dimen/_5ssp"
+            tools:ignore="RelativeOverlap" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_below="@id/headingTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@color/grey_DFE7EB" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/mapImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:minHeight="@dimen/_70sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/map"
+            android:visibility="gone"
+            app:riv_corner_radius="@dimen/_3sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadingDeliveryLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mapImageView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/DELIVERY_LOCATION"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDelivery"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:visibility="gone"
+            android:layout_below="@id/tvHeadingDeliveryLocation"
+            android:src="@drawable/ic_deliveries"
+            android:tint="@color/green_light"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryLocationAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivDelivery"
+            android:layout_below="@id/tvHeadingDeliveryLocation"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:visibility="gone"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/gotham_book"
+            android:textAlignment="viewStart"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp"
+            tools:text="@string/_3101_s_grand_blvd_st_louis_mo"
+            tools:ignore="RtlCompat" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadingDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deliveryLocationAppCompatTextView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/destination"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHeadingDestination"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:drawableStart="@drawable/ic_location_small_icon"
+            android:drawablePadding="@dimen/_3ssp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:drawableTint="@color/green_light"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            tools:text="@string/please_call_me_and_i_ll_meet_you"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadingMessageToDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDestination"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/message_to_driver"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMessageToDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHeadingMessageToDriver"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:drawableStart="@drawable/ic_msg_icon"
+            android:drawablePadding="@dimen/_3ssp"
+            android:visibility="gone"
+            android:drawableTint="@color/green_light"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            tools:text="@string/please_call_me_and_i_ll_meet_you"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadingEstimatedPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@id/tvMessageToDriver"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/ESTIMATED_PICKUP"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEstimatedPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHeadingEstimatedPickup"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:drawableStart="@drawable/ic_watch_icon"
+            android:drawablePadding="@dimen/_3ssp"
+            android:visibility="gone"
+            android:drawableTint="@color/green_light"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            tools:text="@string/please_call_me_and_i_ll_meet_you"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadingEstimatedDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEstimatedPickup"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/ESTIMATED_DELIVERY"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEstimatedDelivery"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHeadingEstimatedDelivery"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:drawableStart="@drawable/ic_watch_icon"
+            android:drawablePadding="@dimen/_3ssp"
+            android:gravity="center_vertical"
+            android:drawableTint="@color/green_light"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            tools:text="@string/please_call_me_and_i_ll_meet_you"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadingTrackingLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@id/tvEstimatedDelivery"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/TRACKING_LINK"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOrderTracking"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"
+            android:layout_below="@id/tvHeadingTrackingLink"
+            android:src="@drawable/order_tracking_icon"
+            android:tint="@color/green_light"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTrackingLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHeadingTrackingLink"
+            android:layout_toEndOf="@id/ivOrderTracking"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center_vertical"
+            android:textColorLink="@color/green_light"
+            android:autoLink="all"
+            android:linksClickable="true"
+            android:visibility="gone"
+            android:includeFontPadding="false"
+            tools:text="@string/please_call_me_and_i_ll_meet_you"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_5ssp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

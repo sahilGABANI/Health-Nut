@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="divider_dp">0.2dp</dimen>
+
+    <dimen name="minus_five_dp">-5dp</dimen>
+    <dimen name="minus_four_dp">-4dp</dimen>
+    <dimen name="minus_three_dp">-3dp</dimen>
+    <dimen name="minus_two_dp">-2dp</dimen>
+    <dimen name="minus_one_dp">-1dp</dimen>
+
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="half_dp">0.5dp</dimen>
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="two_dp">2dp</dimen>
+    <dimen name="one_half_dp">1.5dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="editor_size">32dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="top_tool_icon_width">50dp</dimen>
+    <dimen name="collapsed_size">60dp</dimen>
+    <dimen name="collapsed_icon_size">32dp</dimen>
+    <dimen name="expanded_icon_size">40dp</dimen>
+    <dimen name="icon_margin">20dp</dimen>
+    <dimen name="default_corner_radius">4dp</dimen>
+    <dimen name="expand_drawable_size">18dp</dimen>
+    <dimen name="grid_column_width">250dp</dimen>
+
+</resources>

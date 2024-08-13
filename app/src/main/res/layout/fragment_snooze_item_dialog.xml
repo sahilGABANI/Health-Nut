@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ui.main.menu.SnoozeItemDialogFragment">
+
+    <LinearLayout
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_rounded_white"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_6sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/closeButtonMaterialCardView"
+                android:layout_alignBottom="@id/closeButtonMaterialCardView"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/gotham_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/snooze_item"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                tools:ignore="RelativeOverlap" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/closeButtonMaterialCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:cardCornerRadius="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
+                app:strokeColor="@color/color_E4E4E3"
+                app:strokeWidth="1dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_6sdp"
+                    android:layout_height="@dimen/_6sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:src="@drawable/ic_close_icon"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/orderItemDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/order_list_background"
+            android:minHeight="@dimen/_25sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/productImageView"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_4sdp" />
+
+            <LinearLayout
+                android:id="@+id/productDetailsLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/productImageView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_book"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/_6_cookies"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productPrize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_book"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/green_light"
+                    android:textSize="@dimen/_5ssp"
+                    tools:text="@string/dummy_prize" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/turnOffUntilItTurnItOnLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/card_rounded_border"
+                android:minHeight="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/turnOffUntilItTurnItOnRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:button="@drawable/custom_radio_button"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:checked="true"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="@string/turn_off_until_it_turn_it_on"
+                    android:textColor="@color/radio_button_text_color"
+                    android:textSize="@dimen/_6ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/snoozedOneHourLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/card_rounded_border"
+                android:minHeight="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/snoozedOneHourRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:button="@drawable/custom_radio_button"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="@string/snooze_1_hour"
+                    android:textColor="@color/radio_button_text_color"
+                    android:textSize="@dimen/_6ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/snoozeUntilTomorrowLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/card_rounded_border"
+                android:minHeight="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/snoozeUntilTomorrowRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:button="@drawable/custom_radio_button"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="@string/snooze_until_tomorrow"
+                    android:textColor="@color/radio_button_text_color"
+                    android:textSize="@dimen/_6ssp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/snoozedFourHourLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/card_rounded_border"
+                android:minHeight="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/snoozedFourHourRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:button="@drawable/custom_radio_button"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="@string/snooze_4_hours"
+                    android:textColor="@color/radio_button_text_color"
+                    android:textSize="@dimen/_6ssp" />
+
+            </LinearLayout>
+
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:backgroundTint="@color/buttonColor"
+            android:fontFamily="@font/gotham_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.02"
+            android:minHeight="@dimen/_25sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="@string/confirm"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_8ssp"
+            app:cornerRadius="@dimen/_3sdp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_3sdp">
+
+    <LinearLayout
+        android:id="@+id/productBackground"
+        android:layout_width="@dimen/_23sdp"
+        android:layout_height="@dimen/_23sdp"
+        android:background="@drawable/order_list_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/productImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_2sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_logo"
+            app:riv_corner_radius="@dimen/_2sdp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/productBackground"
+        app:layout_constraintTop_toTopOf="@id/productBackground"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/productBackground">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_medium"
+            android:includeFontPadding="false"
+            android:text="@string/nodemailer"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_6ssp"
+            app:layout_constraintStart_toEndOf="@id/productBackground"
+            app:layout_constraintTop_toTopOf="@id/productBackground" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_book"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:includeFontPadding="false"
+            tools:text="@string/_435_cal"
+            android:textColor="@color/md_grey"
+            android:textSize="@dimen/_5ssp"
+            app:layout_constraintStart_toEndOf="@id/productBackground"
+            app:layout_constraintTop_toBottomOf="@id/productNameTextView"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/productPrizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:fontFamily="@font/century_schoolbook_bold"
+        android:textColor="@color/green_light"
+        android:textSize="@dimen/_5ssp"
+        app:layout_constraintEnd_toStartOf="@id/productQuantityTextview"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="$10" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/productQuantityTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/inter_semibold"
+        android:textColor="@color/grey_999999"
+        android:textSize="@dimen/_5ssp"
+        app:layout_constraintEnd_toStartOf="@id/downArrowBackgroundMaterialCardView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="x 1" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/downArrowBackgroundMaterialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/_2sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/md_grey"
+        app:strokeWidth="1dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_3sdp"
+            android:src="@drawable/ic_down_arrow_icon"
+            android:tint="@color/green_light" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productBackground">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/productDetailsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productBackground">
+
+        <LinearLayout
+            android:id="@+id/cardAndBowLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/extraLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textSpecialLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textSpecialTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:includeFontPadding="false"
+                android:text="@string/special_instructions"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderSpecialInstructionsAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:fontFamily="@font/inter_regular"
+                android:includeFontPadding="false"
+                android:text="@string/i_want_a_blue_bow"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_dp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@color/color_E4E4E3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productDetailsLinearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

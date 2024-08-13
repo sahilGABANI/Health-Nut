@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timeManagementSwipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/timeManagementConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F0F4F6"
+        tools:context=".ui.main.timemanagement.TimeManagementFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/time_management"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/calenderCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_3sdp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="@id/headingTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/headingTextView"
+            app:strokeColor="@color/color_DFE7EB"
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/currentMonthTextView"
+                android:layout_width="@dimen/_63sdp"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_calender"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/orders"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_6ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/color_DFE7EB"
+            app:layout_constraintBottom_toBottomOf="@id/clockOutMaterialButton"
+            app:layout_constraintBottom_toTopOf="@id/viewLinearLayout"
+            app:layout_constraintEnd_toStartOf="@id/calenderCardView"
+            app:layout_constraintTop_toTopOf="@id/clockOutMaterialButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clockOutMaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:backgroundTint="@color/buttonColor"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.01"
+            android:minHeight="@dimen/_20sdp"
+            android:text="@string/clock_in"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_7ssp"
+            app:cornerRadius="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@id/headingTextView"
+            app:layout_constraintEnd_toStartOf="@id/view"
+            app:layout_constraintTop_toTopOf="@id/headingTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/timeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:fontFamily="@font/inter_medium"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_6ssp"
+            app:layout_constraintBottom_toBottomOf="@id/headingTextView"
+            app:layout_constraintEnd_toStartOf="@id/clockOutMaterialButton"
+            app:layout_constraintTop_toTopOf="@id/headingTextView"
+            tools:text="@string/title_open_time" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/actionAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:drawableEnd="@drawable/ic_time_management_small_icon"
+            android:drawablePadding="@dimen/_2sdp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/clocked_in_"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_6ssp"
+            app:drawableTint="@color/red"
+            app:layout_constraintBottom_toBottomOf="@id/headingTextView"
+            app:layout_constraintBottom_toTopOf="@id/viewLinearLayout"
+            app:layout_constraintEnd_toStartOf="@id/timeTextView"
+            app:layout_constraintTop_toTopOf="@id/headingTextView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/employeeDetailsCardView"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headingTextView"
+            app:strokeColor="@color/color_DFE7EB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:includeFontPadding="false"
+                    android:text="@string/employee"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6ssp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@color/color_DFE7EB" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/employeeImageView"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_logo"
+                        app:riv_corner_radius="@dimen/_3sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/employeeNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_toEndOf="@id/employeeImageView"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/alex_bauman"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_6ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/employeePositionTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/employeeNameTextView"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_toEndOf="@id/employeeImageView"
+                        android:text="@string/manager"
+                        android:textColor="@color/text_color_light" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/employeeContactNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableStart="@drawable/ic_call_icon"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/dummy_mobile_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6ssp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/employeeEmailId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableStart="@drawable/ic_mail_icon"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/dummy_mail_id"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6ssp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-2dp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:src="@drawable/ic_crew_select_icon" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/employeeStoreName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/inter_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/dummy_store_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_6ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-2dp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:src="@drawable/ic_location_icon" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/employeeStoreLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/inter_regular"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_6ssp"
+                        tools:text="@string/_3101_s_grand_blvd_st_louis_mo" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/viewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_117sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/employeeDetailsCardView"
+            app:layout_constraintTop_toBottomOf="@id/clockOutMaterialButton"
+            app:layout_constraintTop_toTopOf="@id/employeeDetailsCardView"
+            tools:listitem="@layout/clockin_out_details_item">
+
+            <include layout="@layout/header_clockinout_item" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvClockInOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

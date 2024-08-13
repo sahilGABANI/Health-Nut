@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llAdminPinBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_rounded_white"
+        android:minWidth="@dimen/_180sdp"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_14sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_14sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/century_schoolbook_bold"
+            android:text="@string/additional_permissions_needed"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/errorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_error_icon"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/gotham_book"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_6ssp"
+            android:visibility="gone"
+            tools:text="Your username and password does not match" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/admin_pin"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/_6ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="@string/password"
+            app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+            app:boxCornerRadiusTopStart="@dimen/_4sdp"
+            app:boxStrokeColor="@color/hintColor"
+            app:hintEnabled="false"
+            app:hintTextColor="@color/hintColor"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/md_red">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:hint="@string/pin_cap"
+                android:imeOptions="actionDone"
+                android:includeFontPadding="false"
+                android:inputType="numberPassword"
+                android:textColor="@color/color_666666"
+                android:textColorHint="@color/hintColor"
+                android:textCursorDrawable="@color/hintColor"
+                android:textSize="@dimen/_7ssp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkPinButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:backgroundTint="@color/buttonColor"
+            android:fontFamily="@font/gotham_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.05"
+            android:minWidth="@dimen/_150sdp"
+            android:minHeight="@dimen/_25sdp"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="@string/check_pin"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_6ssp"
+            app:cornerRadius="@dimen/_4sdp" />
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/closeButtonMaterialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_2sdp"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/color_ADC2CC"
+        app:strokeWidth="1dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_6sdp"
+            android:layout_height="@dimen/_6sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_3sdp"
+            android:src="@drawable/ic_close_icon" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

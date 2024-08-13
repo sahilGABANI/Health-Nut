@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayout">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_F0F4F6"
+            tools:context=".ui.main.order.OrdersFragment"
+            tools:ignore="UselessParent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/headingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/century_schoolbook_bold"
+                android:text="@string/orders"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/allCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headingTextView"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:checked="true"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/all"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/pickupCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headingTextView"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_toEndOf="@id/allCheckBox"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/pickup"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/deliveryCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headingTextView"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_toEndOf="@id/pickupCheckBox"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/delivery"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/inStoreCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headingTextView"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_toEndOf="@id/deliveryCheckBox"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:text="@string/in_store"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_5ssp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dateCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headingTextView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_3sdp"
+                app:strokeColor="@color/color_E4E4E3"
+                app:strokeWidth="1dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textSize="@dimen/_6ssp"
+                    android:background="@android:color/transparent"
+                    android:drawableEnd="@drawable/drop_down_icon"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:dropDownWidth="@dimen/_45sdp"
+                    android:inputType="none"
+                    android:dropDownVerticalOffset="6dp"
+                    android:text="@string/active"
+                    android:fontFamily="@font/gotham_book"
+                    android:textColor="@color/md_grey"
+                    app:endIconTint="@color/color_ADC2CC" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/statusSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headingTextView"
+                android:layout_alignBottom="@id/dateCardView"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_toStartOf="@id/dateCardView"
+                app:cardCornerRadius="@dimen/_3sdp"
+                app:strokeColor="@color/color_E4E4E3"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/llSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_2sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/statusTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gotham_book"
+                        android:includeFontPadding="false"
+                        android:text="@string/status_text"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_6ssp" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:background="@android:color/transparent"
+                        android:drawableEnd="@drawable/drop_down_icon"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:dropDownWidth="@dimen/_45sdp"
+                        android:inputType="none"
+                        android:dropDownVerticalOffset="6dp"
+                        android:text="@string/select"
+                        android:fontFamily="@font/gotham_book"
+                        android:textColor="@color/md_grey"
+                        app:endIconTint="@color/color_ADC2CC" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/allCheckBox"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="-3dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOrderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:clickable="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/emptyMessageAppCompatTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/no_order_for_today"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp"
+                    android:visibility="gone"
+                    app:fontFamily="@font/inter_medium" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>

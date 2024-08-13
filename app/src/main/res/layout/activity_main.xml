@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMainLayout"
+    android:background="@color/color_F0F4F6">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoAppCompatImageView"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_launcher_logo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/storeAppCompatImageView"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/logoAppCompatImageView"
+            android:src="@drawable/ic_store_selected" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/locationAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_toEndOf="@+id/storeAppCompatImageView"
+            android:fontFamily="@font/gotham_book"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp"
+            tools:text="@string/store_name" />
+
+        <LinearLayout
+            android:id="@+id/openStoreTimeLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/locationAppCompatTextView"
+            android:background="@drawable/store_open_close_box_border"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOpenAndClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/store_open_close_bg"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:textAllCaps="true"
+                android:text="@string/title_open"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7sdp" />
+
+            <TextClock
+                android:id="@+id/liveTimeTextClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_book"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:layout_gravity="center"
+                android:timeZone="America/Los_Angeles"
+                android:paddingVertical="@dimen/_4sdp"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7sdp"
+                tools:text="@string/title_open_time" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtSearch"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/newOrderMaterialButton"
+                android:layout_alignBottom="@id/newOrderMaterialButton"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_toStartOf="@id/newOrderMaterialButton"
+                android:gravity="center"
+                app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                app:boxCornerRadiusTopStart="@dimen/_4sdp"
+                app:boxStrokeColor="@color/color_D1D1D0"
+                app:endIconDrawable="@drawable/ic_search_icon"
+                app:endIconMode="custom"
+                app:endIconTint="@color/color_ADC2CC"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/color_DFE7EB">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search"
+                    android:imeOptions="actionDone"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:textColor="@color/color_666666"
+                    android:textColorHint="@color/md_grey"
+                    android:fontFamily="@font/gotham_book"
+                    android:textCursorDrawable="@color/hintColor"
+                    android:textSize="@dimen/_6ssp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/newOrderMaterialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/buttonColor"
+                android:fontFamily="@font/gotham_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                android:paddingHorizontal="@dimen/_7sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="@string/new_order"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_7ssp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:icon="@drawable/ic_shopping_cart"
+                app:iconGravity="start" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/toolbarDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/color_E4E4E3"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRelativeLayout" />
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarDivider">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollOnSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/deviceInfoLinearLayout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_6sdp"
+                        android:background="@drawable/grey_border"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_3sdp">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="@dimen/_26sdp"
+                            android:layout_height="@dimen/_26sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_launcher_logo"
+                            app:riv_corner_radius="@dimen/_4sdp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/loginCrewNameTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gotham_book"
+                                android:includeFontPadding="false"
+                                android:paddingStart="@dimen/_4sdp"
+                                android:paddingTop="@dimen/_2sdp"
+                                tools:text="@string/angelina"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_8sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/loggedInUserJobPostTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gotham_book"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:paddingStart="@dimen/_4sdp"
+                                android:paddingBottom="@dimen/_2sdp"
+                                tools:text="@string/manager"
+                                android:textAllCaps="false"
+                                android:textColor="@color/md_grey"
+                                android:textSize="@dimen/_7sdp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/color_E4E4E3" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/orderMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_order"
+                        app:isMenuSelected="true"
+                        app:name="@string/orders"
+                        app:notificationCount="1" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/deliveriesMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_deliveries"
+                        app:isMenuSelected="false"
+                        app:name="@string/deliveries"
+                        app:notificationCount="5" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/orderMenuMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_order_menu"
+                        app:isMenuSelected="false"
+                        app:name="@string/menu" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/timeManagementMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:icon="@drawable/ic_menu_time_management"
+                        app:isMenuSelected="false"
+                        app:name="@string/time_management" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/storeMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_store"
+                        app:isMenuSelected="false"
+                        app:name="@string/store" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/LoyaltyMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_store"
+                        app:isMenuSelected="false"
+                        app:name="@string/label_loyalty" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/giftCardMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_gift_card"
+                        app:isMenuSelected="false"
+                        app:name="Gift Cards" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/settingMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_setting"
+                        app:isMenuSelected="false"
+                        android:visibility="gone"
+                        app:name="@string/settings" />
+
+                    <com.hotbox.terminal.ui.main.view.MenuView
+                        android:id="@+id/logOutMenuView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_menu_logout"
+                        app:isMenuSelected="false"
+                        app:name="@string/logout" />
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/deviceInfoLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/color_E4E4E3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_6sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/androidIdAppCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gotham_book"
+                        android:includeFontPadding="false"
+                        android:paddingStart="@dimen/_4sdp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/md_grey"
+                        android:textSize="@dimen/_6sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham_book"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_4sdp"
+                            android:text="@string/powered_by"
+                            android:textAllCaps="false"
+                            android:textColor="@color/md_grey"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gotham_book"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_4sdp"
+                            android:text="@string/oper"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/versionNameAppCompatTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham_book"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_4sdp"
+                            android:paddingEnd="@dimen/_4sdp"
+                            android:textAllCaps="false"
+                            android:textColor="@color/md_grey"
+                            android:textSize="@dimen/_6sdp"
+                            tools:text="V 1.0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@color/color_E4E4E3" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logOutTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textSize="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/gotham_medium"
+        android:text="@string/system_will_timeout_due_to_inactivity_in_30_seconds"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

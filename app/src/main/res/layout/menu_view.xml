@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuConstraintLayout"
+    android:background="@color/menu_background_color"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/menuTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:drawablePadding="@dimen/_3sdp"
+        android:fontFamily="@font/gotham_medium"
+        android:paddingVertical="@dimen/_8sdp"
+        android:text="@string/orders"
+        android:textAllCaps="true"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/notificationCountTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:drawableStartCompat="@drawable/ic_menu_order" />
+
+    <View
+        android:id="@+id/selectionView"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="0dp"
+        android:background="@color/orange"
+        app:layout_constraintBottom_toBottomOf="@id/menuTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menuTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/notificationCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_9sdp"
+        android:background="@drawable/notification_count_bg"
+        android:fontFamily="@font/gotham_book"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="@dimen/_4sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:textAllCaps="true"
+        android:textColor="@color/menu_notification_count_text_color"
+        android:textSize="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@id/menuTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menuTextView"
+        tools:text="1" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/color_E4E4E3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

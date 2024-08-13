@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F0F4F6"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.userstore.boxes.BoxesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_item_rounded"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_search_icon"
+                android:hint="@string/search"
+                android:padding="@dimen/_5sdp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3">
+
+                <View
+                    android:layout_width="@dimen/two_dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_DFE7EB" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/sort_by"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_6ssp" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:background="@android:color/transparent"
+                    android:drawableEnd="@drawable/drop_down_icon"
+                    android:drawablePadding="@dimen/_3sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:includeFontPadding="false"
+                    android:inputType="none"
+                    android:text="@string/popular"
+                    android:textColor="@color/black"
+                    app:endIconTint="@color/color_ADC2CC" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productDetailsRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_3sdp"
+            tools:listitem="@layout/view_user_store_item"
+            android:layout_marginStart="-6dp"
+            app:spanCount="3"
+            tools:itemCount="20"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+    </LinearLayout>
+
+</LinearLayout>

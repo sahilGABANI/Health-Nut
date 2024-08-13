@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F0F4F6">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/orderListTopPart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/color_E4E4E3"
+        app:strokeWidth="@dimen/one_dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productTextView"
+                android:layout_width="wrap_content"
+                android:minWidth="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/product"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/minus_one_dp"
+                android:layout_toEndOf="@id/productTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:minWidth="@dimen/_140sdp"
+                android:text="@string/description"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@id/descriptionTextView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/price"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/minus_one_dp"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/state"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</merge>

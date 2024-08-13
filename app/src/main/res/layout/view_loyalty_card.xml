@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.hotbox.terminal.utils.Expandable
+        android:id="@+id/expandable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLoyaltyCard"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:minWidth="@dimen/_150sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:drawableStart="@drawable/ic_trophy_icon"
+                android:drawablePadding="@dimen/_4sdp"
+                android:fontFamily="@font/gotham_medium"
+                android:includeFontPadding="false"
+                android:text="@string/loyalty_card_55784"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLoyaltyPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_toStartOf="@id/downArrowMaterialCardView"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/_text"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/_5ssp"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_toStartOf="@id/tvLoyaltyPoint"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/points"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_5ssp"
+                android:visibility="gone"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/downArrowMaterialCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
+                app:strokeColor="@color/color_E4E4E3"
+                app:strokeWidth="1dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/downArrowImageView"
+                    android:layout_width="@dimen/_5sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:src="@drawable/drop_down_icon" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:background="@color/color_E4E4E3" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/redeemPointsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/buttonColor"
+                    android:fontFamily="@font/inter_medium"
+                    android:includeFontPadding="false"
+                    android:visibility="gone"
+                    android:letterSpacing="0.02"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@string/redeem_points"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_6ssp"
+                    app:cornerRadius="@dimen/_3sdp"
+                    app:icon="@drawable/ic_trophy_icon"
+                    app:iconTint="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/discountPrizeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/redeemPointsButton"
+                    android:layout_alignBottom="@id/redeemPointsButton"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:text="@string/_5"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_6ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/redeemPointsButton"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/discountPrizeTextView"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="@string/you_don_t_have_enough_points_to_redeem"
+                    android:textColor="@color/color_666666"
+                    android:textSize="@dimen/_6ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/redeemPointsButton"
+                    android:text="@string/history"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_5ssp" />
+
+                <LinearLayout
+                    android:id="@+id/llHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvHistory"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.hotbox.terminal.utils.Expandable>
+
+</LinearLayout>
